@@ -1,0 +1,22 @@
+{
+   "launchType": "FARGATE",
+   "cluster": "harness-ecs",
+   "serviceName": "cat-service",
+   "taskDefinition": "harness-delegate-task-spec",
+   "desiredCount": 1,
+   "loadBalancers": [],
+   "networkConfiguration": {
+     "awsvpcConfiguration": {
+       "subnets": [
+         "arn:aws:ec2:us-east-1:512050814179:subnet/subnet-4602446c"
+       ],
+       "securityGroups": [
+         "sg-109e1f6b"
+       ],
+       "assignPublicIp": "ENABLED"
+     }
+   },
+   "platformVersion": "LATEST",
+   "schedulingStrategy": "REPLICA",
+   "enableECSManagedTags": true
+ }
