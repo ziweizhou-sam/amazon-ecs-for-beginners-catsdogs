@@ -21,8 +21,8 @@
    "enableECSManagedTags": true,
    "tags": [
           {
-            "Key": "service-name",
-            "Value": "cat"
+            "key": "service-name",
+            "value": "cat"
           }
         ]
  }
