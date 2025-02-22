@@ -18,5 +18,11 @@
    },
    "platformVersion": "LATEST",
    "schedulingStrategy": "REPLICA",
-   "enableECSManagedTags": false
+   "enableECSManagedTags": true,
+   "Tags": [
+          {
+            "Key": "service-name",
+            "Value": "cat"
+          }
+        ]
  }
