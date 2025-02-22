@@ -1,0 +1,5 @@
+service:
+  name: ecs
+  identifier: ecs
+  orgIdentifier: default
+  projectIdentifier: default_project
