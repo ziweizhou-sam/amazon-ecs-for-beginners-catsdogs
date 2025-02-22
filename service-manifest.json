@@ -8,7 +8,7 @@
    "networkConfiguration": {
      "awsvpcConfiguration": {
        "subnets": [
-         "arn:aws:ec2:us-east-1:512050814179:subnet/subnet-4602446c"
+         "subnet-4602446c"
        ],
        "securityGroups": [
          "sg-109e1f6b"
