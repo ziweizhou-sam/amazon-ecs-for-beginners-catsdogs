@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: ecs-infra
+  identifier: ecsinfra
+  orgIdentifier: default
+  projectIdentifier: default_project
+  environmentRef: dev
+  deploymentType: ECS
+  type: ECS
+  spec:
+    connectorRef: AWS
+    region: us-east-1
+    cluster: harness-ecs
+  allowSimultaneousDeployments: false
