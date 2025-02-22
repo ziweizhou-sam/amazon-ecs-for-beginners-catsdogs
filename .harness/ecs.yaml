@@ -19,4 +19,17 @@ service:
                     - task-definition.json
                   repoName: amazon-ecs-for-beginners-catsdogs
                   branch: master
+        - manifest:
+            identifier: service
+            type: EcsServiceDefinition
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: GitHub
+                  gitFetchType: Branch
+                  paths:
+                    - service-manifest.json
+                  repoName: amazon-ecs-for-beginners-catsdogs
+                  branch: master
     type: ECS
