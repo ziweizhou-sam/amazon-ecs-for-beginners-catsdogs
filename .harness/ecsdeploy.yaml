@@ -1,0 +1,55 @@
+pipeline:
+  name: ecs-deploy
+  identifier: ecsdeploy
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: deploy
+        identifier: deploy
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: ECS
+          service:
+            serviceRef: ecs
+          environment:
+            environmentRef: dev
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: ecsinfra
+          execution:
+            steps:
+              - stepGroup:
+                  name: Basic Deployment
+                  identifier: basicDepoyment
+                  steps:
+                    - step:
+                        name: ECS Service Setup
+                        identifier: EcsServiceSetup
+                        type: EcsServiceSetup
+                        timeout: 10m
+                        spec: {}
+                    - step:
+                        name: ECS Upgrade Container
+                        identifier: EcsUpgradeContainer
+                        type: EcsUpgradeContainer
+                        timeout: 10m
+                        spec:
+                          newServiceInstanceCount: 100
+                          newServiceInstanceUnit: Percentage
+            rollbackSteps:
+              - step:
+                  name: ECS Basic Rollback
+                  identifier: EcsBasicRollback
+                  type: EcsBasicRollback
+                  timeout: 10m
+                  spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
