@@ -18,5 +18,5 @@
    },
    "platformVersion": "LATEST",
    "schedulingStrategy": "REPLICA",
-   "enableECSManagedTags": true
+   "enableECSManagedTags": false
  }
