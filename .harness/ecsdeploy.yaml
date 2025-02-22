@@ -30,7 +30,10 @@ pipeline:
                         identifier: EcsServiceSetup
                         type: EcsServiceSetup
                         timeout: 10m
-                        spec: {}
+                        spec:
+                          resizeStrategy: ResizeNewFirst
+                          delegateSelectors:
+                            - docker-delegate
                     - step:
                         name: ECS Upgrade Container
                         identifier: EcsUpgradeContainer
