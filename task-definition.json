@@ -87,7 +87,7 @@
     "registeredAt": "2024-10-16T18:13:46.791Z",
     "registeredBy": "arn:aws:sts::512050814179:assumed-role/Admin/ziwezhou-Isengard",
     "tags": [{
-        "Key": "Name",
-        "Value": "cat-service"
+        "key": "Name",
+        "value": "cat-service"
     }]
 }
