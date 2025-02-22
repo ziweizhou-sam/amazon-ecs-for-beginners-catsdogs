@@ -42,6 +42,8 @@ pipeline:
                         spec:
                           newServiceInstanceCount: 100
                           newServiceInstanceUnit: Percentage
+                          delegateSelectors:
+                            - docker-delegate
             rollbackSteps:
               - step:
                   name: ECS Basic Rollback
