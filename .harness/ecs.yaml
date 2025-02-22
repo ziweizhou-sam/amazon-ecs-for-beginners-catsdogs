@@ -3,3 +3,20 @@ service:
   identifier: ecs
   orgIdentifier: default
   projectIdentifier: default_project
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: taskdefinition
+            type: EcsTaskDefinition
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: GitHub
+                  gitFetchType: Branch
+                  paths:
+                    - task-definition.json
+                  repoName: amazon-ecs-for-beginners-catsdogs
+                  branch: master
+    type: ECS
